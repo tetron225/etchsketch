@@ -2,11 +2,16 @@
 
 //calling the container div and adding it to the container variable
 let container = document.querySelector("#container");
-container.setAttribute("style", "width: 500px; height: 500px; display: flex; flex-direction: row; flex-wrap: wrap;")
+container.setAttribute("style", "width: 1000px; height: 1000px; display: flex; flex-direction: row; flex-wrap: wrap;")
 //using a loop to make the 16x16 div boxes
-for(let i = 1; i < 17; i++) {
+for(let i = 1; i <= 256; i++) {
     let boxdiv = document.createElement("div");
-    boxdiv.setAttribute("style", "background-color: gray; padding: 50px; margin: 1px;");
+    boxdiv.setAttribute("style", "background-color: gray; padding: 30px; margin: 0px;");
+    boxdiv.addEventListener("mouseover", () => {
+        boxdiv.style.backgroundColor = "blue";
+    })
     container.appendChild(boxdiv);
 }
+
+let button = document.querySelector("#abutton");
 
