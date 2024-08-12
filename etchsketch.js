@@ -14,4 +14,20 @@ for(let i = 1; i <= 256; i++) {
 }
 
 let button = document.querySelector("#abutton");
+let input = document.querySelector("#number");
+
+button.addEventListener("click", () => {
+    let num = input.value;
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    for(let i = 1; i <= num * num; i++) {
+        let boxdiv = document.createElement("div");
+        boxdiv.setAttribute("style", "background-color: gray; padding: 30px; margin: 0px;");
+        boxdiv.addEventListener("mouseover", () => {
+            boxdiv.style.backgroundColor = "blue";
+        })
+        container.appendChild(boxdiv);
+    }
+})
 
