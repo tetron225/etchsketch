@@ -23,8 +23,7 @@ for(let i = 1; i <= 16; i++) {
         boxdiv2.style.width = 1000/16 + "px";
         boxdiv2.style.height = 1000/16 + "px";
         boxdiv2.addEventListener("mouseover", () => {
-            let random = Math.random() * 255;
-            boxdiv2.style.backgroundColor = `rgb(${random}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            boxdiv2.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
         })
         boxdiv.appendChild(boxdiv2);
     }
@@ -51,8 +50,7 @@ button.addEventListener("click", () => {
             boxdiv2.style.width = 1000/num + "px";
             boxdiv2.style.height = 1000/num + "px";
             boxdiv2.addEventListener("mouseover", () => {
-                let random = Math.random() * 255;
-                boxdiv2.style.backgroundColor = `rgb(${random}, ${Math.random() * 255}, ${Math.random() * 255})`;
+                boxdiv2.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
             })
             boxdiv.appendChild(boxdiv2);
         }
