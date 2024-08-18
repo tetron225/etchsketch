@@ -1,5 +1,6 @@
 //creating a 16 x 16 div grid through DOM methods
-
+//opacity global variable
+let opacity = 0;
 //calling the container div and adding it to the container variable
 let container = document.querySelector("#container");
 container.setAttribute("style", "max-width: 1000px; max-height: 1000px; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content:center; margin: auto; margin-top: 100px; outline-style: solid;")
@@ -19,11 +20,15 @@ for(let i = 1; i <= 16; i++) {
     for(let j = 1; j <= 16; j++) {
         let boxdiv2 = document.createElement("div");
         
-        boxdiv2.setAttribute("style", "background-color: white; padding: 0px; margin: 0px;");
+        boxdiv2.setAttribute("style", "background-color: white; padding: 0px; margin: 0px; opacity: 0;");
         boxdiv2.style.width = 1000/16 + "px";
         boxdiv2.style.height = 1000/16 + "px";
         boxdiv2.addEventListener("mouseover", () => {
-            boxdiv2.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            //boxdiv2.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            boxdiv2.style.backgroundColor = "black";
+            let currentOpa = Number(window.getComputedStyle(boxdiv2).getPropertyValue("opacity"));  
+            boxdiv2.style.opacity = currentOpa + 0.1;
+            
         })
         boxdiv.appendChild(boxdiv2);
     }
@@ -35,6 +40,7 @@ let input = document.querySelector("#number");
 
 button.addEventListener("click", () => {
     let num = input.value;
+    opacity = 0;
     if(num > 100) {
         let msg = window.prompt("Please pick a number less than 100.");
         return msg;
@@ -46,11 +52,14 @@ button.addEventListener("click", () => {
         let boxdiv = document.createElement("div");
         for(let l = 1; l <= num; l++) {
             let boxdiv2 = document.createElement("div");
-            boxdiv2.setAttribute("style", "background-color: white; padding: 0px; margin: 0px;");
+            boxdiv2.setAttribute("style", "background-color: white; padding: 0px; margin: 0px; opacity:0;");
             boxdiv2.style.width = 1000/num + "px";
             boxdiv2.style.height = 1000/num + "px";
             boxdiv2.addEventListener("mouseover", () => {
-                boxdiv2.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+                //boxdiv2.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+                boxdiv2.style.backgroundColor = "black";
+                let currentOpa = Number(window.getComputedStyle(boxdiv2).getPropertyValue("opacity"));
+                boxdiv2.style.opacity = currentOpa + 0.1;
             })
             boxdiv.appendChild(boxdiv2);
         }
